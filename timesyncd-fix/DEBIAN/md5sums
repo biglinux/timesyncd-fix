@@ -1,0 +1,6 @@
+ec9aa2a3979cf292d5320f79f92d4d7e  DEBIAN/control
+bd382b949ea4e87ef57c092cf83746fc  DEBIAN/dpkg-divert
+4f894988a0b8c3ae33c83802bbfacd48  DEBIAN/preinst
+d403aa97a6265846143ee3bc80e4ee37  DEBIAN/postrm
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+4e904b635387b775ed01aea320312287  etc/systemd/timesyncd.conf

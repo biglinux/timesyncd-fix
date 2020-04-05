@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+package_name=timesyncd-fix
+mkdir -p "/usr/share/dpkgdivert/timesyncd-fix"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/timesyncd-fix/etcsystemdtimesyncd.conf" --rename "/etc/systemd/timesyncd.conf"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/etc/systemd/timesyncd.conf")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/timesyncd-fix/etcsystemdtimesyncd.conf" --rename "/etc/systemd/timesyncd.conf"
+fi
+;;
+esac
+exit 0
